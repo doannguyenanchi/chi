@@ -1,30 +1,39 @@
-dict = ['địa chỉ', 'trường học', 'bùi thị xuân']
+import json
+
+try:
+  with open('tudien_d.json', 'r', encoding='utf-8') as f:
+    dictionary = json.load(f)
+except FileNotFoundError:
+  pass
+
+
 def tim_tughep(t):
-  input = t.split()
-  list_tughep = []
-  n = 0
-  while True:
-    i = len(input)
-    while i > n:
-      tu_ghep = input[n:i]
-      tu = ''
-      for x in tu_ghep:
-        tu += x + ' '
-      tu = tu[:-1]
-      i -= 1
-      if tu.lower() in dict:
-        list_tughep.append(tu)
-        break
-      if i == n:
-        list_tughep.append(tu)
-        break
-    
-    if i >= len(input):
-      break
+    dict = dictionary.keys()
+    input = t.split()
+    list_tughep = []
+    l = 0
+    while True:
+        r = l + 3
+        while r > l:
+            tu_ghep = input[l:r]
+            tu = ''
+            for x in tu_ghep:
+                tu += x + ' '
+            tu = tu[:-1]
+            r -= 1
+            if tu in dict:
+                list_tughep.append(tu)
+                break
+            if r == l:
+                list_tughep.append(tu)
+                break
 
-    n = i + 1
+        if r >= len(input):
+            break
 
-  return list_tughep
+        l = r + 1
 
-print(tim_tughep('Địa chỉ trường học Bùi Thị Xuân'))
-    
+    list_tughep.pop()
+    return list_tughep
+
+print(tim_tughep('địa chỉ trường Bùi Thị Xuân'))
