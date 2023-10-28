@@ -36,4 +36,3 @@ def tim_tughep(t):
     list_tughep.pop()
     return list_tughep
 
-print(tim_tughep('địa chỉ trường Bùi Thị Xuân'))
