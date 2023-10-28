@@ -18,10 +18,7 @@ def tim_tughep(t):
         r = l + 3
         while r > l:
             tu_ghep = input[l:r]
-            tu = ''
-            for x in tu_ghep:
-                tu += x + ' '
-            tu = tu[:-1]
+            tu = ' '.join(tu_ghep)
             r -= 1
             if tu.lower() in dict:
                 list_tughep.append(tu)
