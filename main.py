@@ -1,14 +1,16 @@
 import json
 
 try:
-  with open('tudien_d.json', 'r', encoding='utf-8') as f:
+  with open('tudien.json', 'r', encoding='utf-8') as f:
     dictionary = json.load(f)
 except FileNotFoundError:
   pass
 
-
 def tim_tughep(t):
-    dict = dictionary.keys()
+    dict = []
+    for i in dictionary.keys():
+        dict.append(i.lower())
+
     input = t.split()
     list_tughep = []
     l = 0
@@ -21,7 +23,7 @@ def tim_tughep(t):
                 tu += x + ' '
             tu = tu[:-1]
             r -= 1
-            if tu in dict:
+            if tu.lower() in dict:
                 list_tughep.append(tu)
                 break
             if r == l:
@@ -35,4 +37,3 @@ def tim_tughep(t):
 
     list_tughep.pop()
     return list_tughep
-
