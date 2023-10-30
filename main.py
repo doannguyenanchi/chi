@@ -18,9 +18,11 @@ def tim_tughep(t):
             tu = ' '.join(input[l:r])
 
             r -= 1
+
             if tu.lower() in dict:
                 list_tughep.append(tu)
                 break
+
             if r == l:
                 list_tughep.append(tu)
                 break
@@ -33,4 +35,6 @@ def tim_tughep(t):
     list_tughep.pop()
     return list_tughep
 
-print(tim_tughep('Địa chỉ trường'))
+i='Địa chỉ trường';                  print(f'''{i=:<33} {','.join(tim_tughep(i))=:>}''')
+i='Địa chỉ trường Bùi Thị Xuân';     print(f'''{i=:<33} {','.join(tim_tughep(i))=:>}''')
+i='Địa chỉ trường học Bùi Thị Xuân'; print(f'''{i=:<33} {','.join(tim_tughep(i))=:>}''')
