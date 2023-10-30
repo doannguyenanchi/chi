@@ -32,7 +32,7 @@ def tim_tughep(t):
 
         l = r + 1
 
-    if '' in list_tughep: list_tughep.remove('')
+    list_tughep.pop()
     return list_tughep
 
 print(tim_tughep('Địa chỉ trường'))
