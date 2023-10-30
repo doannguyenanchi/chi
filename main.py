@@ -1,10 +1,8 @@
 import json
+from pathlib import Path
 
-try:
-  with open('tudien.json', 'r', encoding='utf-8') as f:
-    dictionary = json.load(f)
-except FileNotFoundError:
-  pass
+SH = Path(__file__).parent
+dictionary = json.loads(Path(SH/'tudien_d.json').read_text())
 
 def tim_tughep(t):
     dict = []
