@@ -24,7 +24,7 @@ def tim_tughep(t):
                 break
 
             if r == l:
-                list_tughep.append(tu)
+                if tu: list_tughep.append(tu)
                 break
 
         if r >= len(input):
@@ -32,7 +32,6 @@ def tim_tughep(t):
 
         l = r + 1
 
-    list_tughep.pop()
     return list_tughep
 
 i='Địa chỉ trường';                  print(f'''{i=:<33} {','.join(tim_tughep(i))=:>}''')
