@@ -10,21 +10,19 @@ def tim_tughep(t):
     dict = []
     for i in dictionary.keys():
         dict.append(i.lower())
+
     input = t.split()
     list_tughep = []
     l = 0
-  
     while True:
         r = l + 3
         while r > l:
             tu_ghep = input[l:r]
             tu = ' '.join(tu_ghep)
             r -= 1
-          
             if tu.lower() in dict:
                 list_tughep.append(tu)
                 break
-              
             if r == l:
                 list_tughep.append(tu)
                 break
@@ -34,5 +32,7 @@ def tim_tughep(t):
 
         l = r + 1
 
-    list_tughep.pop()
+    if '' in list_tughep: list_tughep.remove('')
     return list_tughep
+
+print(tim_tughep('Địa chỉ trường'))
